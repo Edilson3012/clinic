@@ -15,35 +15,20 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $rand = rand(
-            0,
-            999
-        );
         DB::table('users')->insert(
             [
-                'name' => "Admin Admin" . $rand,
-                'email' => "admin" . $rand . "@paper.com",
+                'name' => "Admin Admin",
+                'email' => "admin@paper.com",
                 'email_verified_at' => now(),
                 'password' => Hash::make('secret'),
                 'created_at' => now(),
                 'updated_at' => now()
             ]
         );
-        DB::table('users')->insert(
-            [
-                'name' => "Edilson Murbach" . $rand,
-                'email' => "edilsongotardi" . $rand . "@live.com",
-                // 'email' => "edilsongotardi@live.com",
-                'email_verified_at' => now(),
-                'password' => Hash::make('123456789'),
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-        );
 
         DB::table('medical_appointment')->insert([
-            'name' => "Erminho" . $rand,
-            'email' => "emerson" . $rand . "@teste.com",
+            'name' => "Joao da silva",
+            'email' => "joao@teste.com",
             'date_appointment' => date('Y-m-d H:i:s'),
             'description' => 'agendamento teste',
             'state' => true,
